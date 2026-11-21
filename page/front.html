@@ -6,142 +6,157 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1024px; height: 1024px; overflow: hidden; background: #f3ede2; }
-  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: #1d1b19; padding: 22px 24px; }
-  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 5px solid #1d1b19; padding-bottom: 10px; }
-  .mast { font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-weight: 700; letter-spacing: 1px; }
-  .mast small { display: block; font-family: "Segoe UI", Arial, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 2px; color: #6b6259; }
-  .date { text-align: right; font-weight: 900; font-size: 44px; line-height: 0.95; color: #b3261e; }
-  .date small { display: block; font-size: 17px; font-weight: 700; color: #1d1b19; letter-spacing: 3px; }
-  .lead { display: grid; grid-template-columns: 330px 1fr; gap: 20px; align-items: center; margin-top: 14px; padding: 12px 18px; background: #1d1b19; color: #f3ede2; border-radius: 10px; }
-  .lead h1 { font-size: 42px; line-height: 1; font-weight: 900; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: #1d1b19; padding: 16px 20px; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 5px solid #1d1b19; padding-bottom: 8px; }
+  .mast { font-family: Georgia, "Times New Roman", serif; font-size: 27px; font-weight: 700; }
+  .mast small { display: block; font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: #6b6259; }
+  .date { text-align: right; font-weight: 900; font-size: 42px; line-height: 0.95; color: #b3261e; }
+  .date small { display: block; font-size: 15px; font-weight: 800; color: #1d1b19; letter-spacing: 3px; }
+
+  .lead { display: grid; grid-template-columns: 250px 1fr; gap: 16px; align-items: center; margin-top: 10px; padding: 10px 14px; background: #1d1b19; color: #f3ede2; border-radius: 10px; }
+  .lead h1 { font-size: 33px; line-height: 1.02; font-weight: 900; }
   .lead h1 em { font-style: normal; color: #ff6b5e; }
-  .lead p { font-size: 18px; line-height: 1.3; margin-top: 10px; color: #e6ddd0; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; }
-  .tile { background: #fffaf2; border: 2px solid #d8cdbc; border-radius: 10px; padding: 10px 14px 12px; height: 290px; overflow: hidden; display: flex; flex-direction: column; }
-  .tile svg { width: 100%; height: 96px; flex: none; }
-  .tag { font-size: 13px; font-weight: 800; letter-spacing: 2px; color: #b3261e; margin-top: 8px; }
-  .tile h2 { font-size: 25px; line-height: 1.08; font-weight: 900; margin-top: 3px; }
-  .tile p { font-size: 15.5px; line-height: 1.3; margin-top: 6px; color: #3d3833; }
-  footer { margin-top: 12px; font-size: 13px; color: #6b6259; display: flex; justify-content: space-between; }
+  .lead p { font-size: 15.5px; line-height: 1.3; margin-top: 6px; color: #e6ddd0; }
+
+  .big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .tile { background: #fffaf2; border: 2px solid #d8cdbc; border-radius: 10px; padding: 8px 12px 10px; height: 262px; overflow: hidden; }
+  .tile svg { width: 100%; height: 84px; display: block; }
+  .tag { font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; color: #b3261e; margin-top: 6px; }
+  .tile h2 { font-size: 20px; line-height: 1.08; font-weight: 900; margin-top: 2px; }
+  .tile p { font-size: 13.5px; line-height: 1.28; margin-top: 4px; color: #3d3833; }
+
+  .regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .region { background: #fffaf2; border: 2px solid #d8cdbc; border-radius: 10px; padding: 8px 12px 8px; height: 226px; overflow: hidden; }
+  .region h3 { font-size: 14px; font-weight: 900; letter-spacing: 2px; color: #fffaf2; background: #1d1b19; display: inline-block; padding: 2px 8px; border-radius: 4px; }
+  .region ul { list-style: none; margin-top: 6px; }
+  .region li { font-size: 13.5px; line-height: 1.25; padding: 4px 0 4px 14px; position: relative; border-bottom: 1px dashed #e0d6c6; }
+  .region li:last-child { border-bottom: none; }
+  .region li::before { content: ""; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border-radius: 50%; background: #b3261e; }
+  .region li b { font-weight: 800; }
+  footer { margin-top: 7px; font-size: 11.5px; color: #6b6259; display: flex; justify-content: space-between; }
 </style>
 </head>
 <body>
 <header>
-  <div class="mast">The World in One Page<small>WORLD NEWS · ONE DAY</small></div>
+  <div class="mast">The World in One Page<small>WORLD NEWS · ONE DAY · 24 STORIES, 6 REGIONS</small></div>
   <div class="date"><small>FRIDAY</small>20 NOVEMBER 2026</div>
 </header>
 
 <section class="lead">
-  <svg viewBox="0 0 330 190" width="330" height="170" aria-label="Falling stock chart">
-    <rect x="0" y="0" width="330" height="190" rx="8" fill="#2b2826"/>
-    <g stroke="#4a4541" stroke-width="1">
-      <line x1="20" y1="40" x2="315" y2="40"/><line x1="20" y1="85" x2="315" y2="85"/><line x1="20" y1="130" x2="315" y2="130"/>
-    </g>
-    <polyline points="20,52 60,46 95,58 130,50 165,70 195,64 225,92 255,110 285,128 312,168" fill="none" stroke="#ff6b5e" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-    <polygon points="300,150 320,176 290,178" fill="#ff6b5e"/>
-    <text x="22" y="28" fill="#f3ede2" font-size="20" font-weight="800">NASDAQ</text>
-    <text x="196" y="30" fill="#ff6b5e" font-size="28" font-weight="900">−5.3%</text>
+  <svg viewBox="0 0 250 120" width="250" height="120" aria-label="Falling stock charts for Nasdaq, Nikkei, Kospi and Taiex">
+    <rect x="0" y="0" width="250" height="120" rx="8" fill="#2b2826"/>
+    <polyline points="12,30 50,26 80,36 110,32 140,52 170,48 196,74 222,96 240,110" fill="none" stroke="#ff6b5e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="12" y="20" fill="#f3ede2" font-size="12.5" font-weight="800">NASDAQ −5.3%   NIKKEI −5.1%</text>
+    <text x="12" y="116" fill="#f3ede2" font-size="12.5" font-weight="800">KOSPI −5.2%   TAIEX −6.2%</text>
   </svg>
   <div>
-    <h1>AI stock rout: <em>Nasdaq −5.3%</em>, wiping out its 2026 gains</h1>
-    <p>Nvidia sinks about 13% on reports of an SEC accounting probe; the S&amp;P 500 falls 3.7% into a correction, and Wall Street's fear gauge (VIX) hits a 19-month high.</p>
+    <h1>AI stock rout sweeps world markets: <em>Nasdaq −5.3%</em>, its 2026 gains gone</h1>
+    <p>Asia's chip-heavy markets crash first; on Wall Street Nvidia sinks about 13% on reports of an SEC accounting probe, the S&amp;P 500 enters a correction and the VIX fear gauge hits a 19-month high.</p>
   </div>
 </section>
 
-<section class="grid">
+<section class="big">
   <article class="tile">
-    <svg viewBox="0 0 300 118" aria-label="White House podium and warning sign">
-      <rect x="0" y="0" width="300" height="118" rx="8" fill="#e9eef5"/>
-      <rect x="40" y="70" width="90" height="40" fill="#f7f7f7" stroke="#9aa7b8" stroke-width="2"/>
-      <polygon points="30,72 85,40 140,72" fill="#f7f7f7" stroke="#9aa7b8" stroke-width="2"/>
-      <g fill="#c9d2de"><rect x="52" y="78" width="8" height="28"/><rect x="70" y="78" width="8" height="28"/><rect x="88" y="78" width="8" height="28"/><rect x="106" y="78" width="8" height="28"/></g>
-      <polygon points="215,14 272,108 158,108" fill="#f2c230" stroke="#1d1b19" stroke-width="4" stroke-linejoin="round"/>
-      <rect x="209" y="44" width="12" height="38" rx="5" fill="#1d1b19"/>
-      <circle cx="215" cy="95" r="7" fill="#1d1b19"/>
+    <svg viewBox="0 0 300 84" aria-label="A bridge broken over the Dnipro and a missile crossing into Poland">
+      <rect x="0" y="0" width="300" height="84" rx="8" fill="#e8eef6"/>
+      <rect x="0" y="56" width="300" height="28" fill="#7fa7cf"/>
+      <path d="M10 46 H88 M112 46 H190" stroke="#4a4541" stroke-width="7"/>
+      <path d="M18 46 V62 M52 46 V62 M150 46 V62 M182 46 V62" stroke="#4a4541" stroke-width="5"/>
+      <path d="M88 46 l8 14 M112 46 l-8 14" stroke="#4a4541" stroke-width="7"/>
+      <circle cx="100" cy="36" r="13" fill="#ff7a59"/><circle cx="100" cy="36" r="6" fill="#ffe08a"/>
+      <rect x="212" y="10" width="72" height="22" fill="#ffffff" stroke="#c9c2b8" stroke-width="1"/><rect x="212" y="32" width="72" height="22" fill="#dc143c"/>
+      <path d="M196 70 Q230 50 250 28" stroke="#1d1b19" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
+      <path d="M250 28 l-10 2 l6 8 z" fill="#1d1b19"/>
+    </svg>
+    <div class="tag">UKRAINE · RUSSIA · POLAND</div>
+    <h2>Russian missiles hit three Kyiv bridges; one strays into Poland</h2>
+    <p>At least nine killed nationwide; Warsaw says a Kh-101 cruise missile entered its airspace. An evening strike on Kryvyi Rih kills a boy and a paramedic, wounding 60.</p>
+  </article>
+
+  <article class="tile">
+    <svg viewBox="0 0 300 84" aria-label="A cyclone spiral over the Bay of Bengal coast">
+      <rect x="0" y="0" width="300" height="84" rx="8" fill="#dbe8ef"/>
+      <path d="M0 84 V50 Q40 40 70 58 Q100 74 130 62 L130 84 z" fill="#b7c99a"/>
+      <g transform="translate(206 42)">
+        <path d="M0 0 m-30 0 a30 30 0 0 1 30 -30 a20 20 0 0 1 20 20" fill="none" stroke="#4b6a85" stroke-width="7" stroke-linecap="round"/>
+        <path d="M0 0 m30 0 a30 30 0 0 1 -30 30 a20 20 0 0 1 -20 -20" fill="none" stroke="#4b6a85" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="0" cy="0" r="7" fill="#4b6a85"/>
+      </g>
+      <text x="16" y="28" fill="#1d1b19" font-size="15" font-weight="900">ODISHA · ANDHRA</text>
+    </svg>
+    <div class="tag">INDIA · CYCLONE AKVAN</div>
+    <h2>Cyclone Akvan makes landfall near Gopalpur</h2>
+    <p>More than 300,000 people are evacuated in Odisha before the storm crosses the coast with gusts of 90 km/h; 47 trains cancelled, no early deaths reported.</p>
+  </article>
+
+  <article class="tile">
+    <svg viewBox="0 0 300 84" aria-label="White House and a warning sign">
+      <rect x="0" y="0" width="300" height="84" rx="8" fill="#e9eef5"/>
+      <rect x="40" y="46" width="90" height="32" fill="#f7f7f7" stroke="#9aa7b8" stroke-width="2"/>
+      <polygon points="30,48 85,22 140,48" fill="#f7f7f7" stroke="#9aa7b8" stroke-width="2"/>
+      <g fill="#c9d2de"><rect x="52" y="54" width="8" height="20"/><rect x="70" y="54" width="8" height="20"/><rect x="88" y="54" width="8" height="20"/><rect x="106" y="54" width="8" height="20"/></g>
+      <polygon points="215,8 262,78 168,78" fill="#f2c230" stroke="#1d1b19" stroke-width="4" stroke-linejoin="round"/>
+      <rect x="210" y="30" width="10" height="28" rx="4" fill="#1d1b19"/><circle cx="215" cy="68" r="5.5" fill="#1d1b19"/>
     </svg>
     <div class="tag">UNITED STATES · IRAN</div>
     <h2>Trump warns Iran over rumoured "dirty bomb" plot</h2>
-    <p>"We will not allow that," he says, and calls a wave of US tech outages "separate events".</p>
-  </article>
-
-  <article class="tile">
-    <svg viewBox="0 0 300 118" aria-label="Danish flag and a departing diplomat's suitcase">
-      <rect x="0" y="0" width="300" height="118" rx="8" fill="#f6e7e4"/>
-      <rect x="24" y="20" width="120" height="80" fill="#c8102e"/>
-      <rect x="62" y="20" width="16" height="80" fill="#ffffff"/><rect x="24" y="52" width="120" height="16" fill="#ffffff"/>
-      <rect x="182" y="46" width="78" height="54" rx="8" fill="#5b4636"/>
-      <rect x="206" y="34" width="30" height="14" rx="4" fill="none" stroke="#5b4636" stroke-width="5"/>
-      <text x="221" y="81" text-anchor="middle" fill="#f3ede2" font-size="15" font-weight="800">EXIT</text>
-      <path d="M268 74 l18 0 m-8 -8 l8 8 l-8 8" stroke="#1d1b19" stroke-width="4" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div class="tag">DENMARK · RUSSIA</div>
-    <h2>Denmark expels Russia's defence attaché</h2>
-    <p>It ties a foiled plot to kill a Ukrainian rapper in Denmark to Russian spies, and halts visas for Russians.</p>
-  </article>
-
-  <article class="tile">
-    <svg viewBox="0 0 300 118" aria-label="EU and UK flags side by side">
-      <rect x="0" y="0" width="300" height="118" rx="8" fill="#e8ecf6"/>
-      <rect x="26" y="22" width="114" height="76" fill="#003399"/>
-      <g fill="#ffcc00">
-        <circle cx="83" cy="36" r="4"/><circle cx="100" cy="41" r="4"/><circle cx="111" cy="54" r="4"/><circle cx="111" cy="68" r="4"/><circle cx="100" cy="80" r="4"/><circle cx="83" cy="85" r="4"/>
-        <circle cx="66" cy="80" r="4"/><circle cx="55" cy="68" r="4"/><circle cx="55" cy="54" r="4"/><circle cx="66" cy="41" r="4"/>
-      </g>
-      <rect x="160" y="22" width="114" height="76" fill="#012169"/>
-      <path d="M160 22 L274 98 M274 22 L160 98" stroke="#ffffff" stroke-width="14"/>
-      <path d="M160 22 L274 98 M274 22 L160 98" stroke="#c8102e" stroke-width="5"/>
-      <path d="M217 22 V98 M160 60 H274" stroke="#ffffff" stroke-width="22"/>
-      <path d="M217 22 V98 M160 60 H274" stroke="#c8102e" stroke-width="12"/>
-    </svg>
-    <div class="tag">EUROPE · BRUSSELS</div>
-    <h2>EU–UK summit deepens post-Brexit ties</h2>
-    <p>UK PM Andy Burnham and EU leaders agree closer work on defence, security and youth mobility.</p>
-  </article>
-
-  <article class="tile">
-    <svg viewBox="0 0 300 118" aria-label="Qatar and Germany flags with a euro sign">
-      <rect x="0" y="0" width="300" height="118" rx="8" fill="#f2ede6"/>
-      <rect x="22" y="24" width="96" height="70" fill="#8a1538"/>
-      <path d="M22 24 h30 l-8 7.8 l8 7.8 l-8 7.8 l8 7.8 l-8 7.8 l8 7.8 l-8 7.8 l8 7.8 v1.6 h-30 z" fill="#ffffff"/>
-      <rect x="182" y="24" width="96" height="23.3" fill="#000000"/><rect x="182" y="47.3" width="96" height="23.3" fill="#dd0000"/><rect x="182" y="70.6" width="96" height="23.4" fill="#ffce00"/>
-      <path d="M128 59 h42 m-12 -12 l12 12 l-12 12" stroke="#1d1b19" stroke-width="5" fill="none" stroke-linecap="round"/>
-      <text x="150" y="44" text-anchor="middle" fill="#1d1b19" font-size="20" font-weight="900">€15bn</text>
-    </svg>
-    <div class="tag">GERMANY · QATAR</div>
-    <h2>Qatar pledges €15 billion for Germany</h2>
-    <p>Hosting the emir in Berlin, Chancellor Merz seeks a "360-degree partnership".</p>
-  </article>
-
-  <article class="tile">
-    <svg viewBox="0 0 300 118" aria-label="Globe with a stopped clock and a crossed-out oil barrel">
-      <rect x="0" y="0" width="300" height="118" rx="8" fill="#e4f1ea"/>
-      <circle cx="74" cy="59" r="44" fill="#3f8fc4"/>
-      <path d="M48 32 q14 -6 22 4 q6 10 -6 14 q-10 6 -4 16 q4 10 -10 12 q-10 -10 -8 -24 q2 -14 6 -22 z M86 24 q16 2 22 14 q-8 4 -14 0 q-10 -6 -8 -14 z M92 70 q14 -4 18 8 q-6 14 -18 14 q-6 -10 0 -22 z" fill="#5fae6b"/>
-      <circle cx="165" cy="59" r="30" fill="#ffffff" stroke="#1d1b19" stroke-width="4"/>
-      <path d="M165 59 V38 M165 59 L180 66" stroke="#1d1b19" stroke-width="4" stroke-linecap="round"/>
-      <rect x="226" y="30" width="44" height="60" rx="6" fill="#4b4b4b"/>
-      <rect x="226" y="44" width="44" height="5" fill="#2b2b2b"/><rect x="226" y="70" width="44" height="5" fill="#2b2b2b"/>
-      <path d="M218 22 L278 98" stroke="#b3261e" stroke-width="7" stroke-linecap="round"/>
-    </svg>
-    <div class="tag">CLIMATE · COP31 ANTALYA</div>
-    <h2>COP31 runs into overtime with no fossil-fuel pledge</h2>
-    <p>The draft deal in Türkiye drops all wording on moving away from fossil fuels.</p>
-  </article>
-
-  <article class="tile">
-    <svg viewBox="0 0 300 118" aria-label="Seismograph trace over the Andes">
-      <rect x="0" y="0" width="300" height="118" rx="8" fill="#f3ebe0"/>
-      <polygon points="0,118 40,70 70,92 110,44 150,86 190,52 230,90 262,62 300,96 300,118" fill="#b59a7c"/>
-      <polygon points="104,52 110,44 117,53" fill="#ffffff"/><polygon points="184,59 190,52 197,60" fill="#ffffff"/>
-      <polyline points="10,40 60,40 70,22 80,60 90,12 100,68 110,28 120,50 130,36 140,40 290,40" fill="none" stroke="#b3261e" stroke-width="4" stroke-linejoin="round"/>
-      <text x="290" y="30" text-anchor="end" fill="#1d1b19" font-size="24" font-weight="900">M6.7</text>
-    </svg>
-    <div class="tag">PERU</div>
-    <h2>M6.7 earthquake shakes central Peru</h2>
-    <p>A deep quake hits Junín on Friday evening local time; no tsunami threat.</p>
+    <p>"We will not allow that," he says at his first news conference since Asia, calling a wave of US outages "separate events"; he confirms firing his cyber director.</p>
   </article>
 </section>
 
-<footer><span>Reported 20 November 2026 (Peru quake: Friday evening local time)</span><span>Sources: AP, Reuters, CNN, Al Jazeera, Anadolu, USGS</span></footer>
+<section class="regions">
+  <div class="region">
+    <h3>EUROPE</h3>
+    <ul>
+      <li><b>EU–UK summit</b> in Brussels agrees closer defence, security and youth-mobility ties</li>
+      <li><b>Denmark expels Russia's defence attaché</b> over a plot to kill a Ukrainian rapper</li>
+      <li><b>De Villepin</b> launches a 2027 French presidential bid</li>
+      <li><b>UK confirms</b> offensive cyber operations against Russia, China, Iran and North Korea</li>
+    </ul>
+  </div>
+  <div class="region">
+    <h3>MIDDLE EAST &amp; GULF</h3>
+    <ul>
+      <li><b>Qatar pledges €15bn</b> for Germany as Merz hosts the emir in Berlin</li>
+      <li><b>Iran denies</b> a US-Israeli strike on Qeshm Island, blaming old munitions</li>
+      <li><b>Saudi coalition</b> intercepts two Houthi missiles aimed at Jazan</li>
+      <li><b>Iran's Araghchi</b>: the US blockade must end for oil exports to resume</li>
+    </ul>
+  </div>
+  <div class="region">
+    <h3>AMERICAS</h3>
+    <ul>
+      <li><b>M6.7 quake</b> shakes central Peru (Junín), Friday evening local time; no tsunami</li>
+      <li><b>California</b> proposes emergency powers to shut down dangerous AI models</li>
+      <li><b>US holds first offshore critical-minerals lease sale</b>, off American Samoa</li>
+    </ul>
+  </div>
+  <div class="region">
+    <h3>ASIA</h3>
+    <ul>
+      <li><b>South Korea's Lee</b> orders an exam overhaul after AI cheating scandals</li>
+      <li><b>Japan</b> to buy up to 8m barrels of Saudi crude for its reserve</li>
+      <li><b>Nikkei −5.1%, Kospi −5.2%, Taiex −6.2%</b>: Asia's worst week since 2020 looms</li>
+    </ul>
+  </div>
+  <div class="region">
+    <h3>AFRICA &amp; AID</h3>
+    <ul>
+      <li><b>Angola's Endiama</b> to pay $180m for a 10% stake in De Beers</li>
+      <li><b>UN fund</b> gives $52m for 300,000 children in crises in Lebanon, Myanmar and South Sudan</li>
+      <li><b>Save the Children</b>: a record 1 in 4 children now live in conflict zones</li>
+    </ul>
+  </div>
+  <div class="region">
+    <h3>CLIMATE &amp; SPORT</h3>
+    <ul>
+      <li><b>COP31</b> reaches its last scheduled day in Antalya; draft drops all fossil-fuel wording</li>
+      <li><b>UEFA fines England</b> €15,000 over fans' chants in Madrid</li>
+      <li><b>FIA</b> to bring in full-time Formula 1 stewards from 2027</li>
+    </ul>
+  </div>
+</section>
+
+<footer><span>Events and first reports of 20 November 2026 in any time zone</span><span>Sources: AP, Reuters, AFP, CNN, Al Jazeera, Anadolu, NBC, IMD, USGS</span></footer>
 </body>
 </html>
